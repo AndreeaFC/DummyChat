@@ -1,0 +1,10 @@
+﻿.navbar {
+    border-radius: 0;
+}
+
+#logo {
+    width: auto; 
+    height: 70px; 
+    margin-top: -.85em; 
+    border-radius: 40px;
+}

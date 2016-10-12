@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html ng-app="mainModule">
+<head>
+    <title>DummyChat</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="utf-8" />
+    <link href="CSS/master.css" rel="stylesheet" />
+</head>
+<body ng-controller="MainController">
+    <header ng-include="'Views/Partials/Navbar.html'"></header>
+
+    <main class="container-fluid no-whitespace" ng-view></main>
+
+    <!-- 3rd party libs and frameworks -->
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+
+    <!-- Modules -->
+    <script src="Scripts/Modules/module.js"></script>
+
+    <!-- Routes -->
+    <script src="Scripts/Routes/route.js"></script>
+
+    <!-- Components -->
+
+    <!-- Controllers -->
+    <script src="Scripts/Controllers/main.controller.js"></script>
+    <script src="Scripts/Controllers/home.controller.js"></script>
+</body>
+</html>
