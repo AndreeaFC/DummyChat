@@ -14,6 +14,10 @@ angular.module("mainModule")
                     controller: "HomeController",
                     caseInsensitiveMatch: true,
                     activeTab: "Home"
-                });
+                })
+                .when("/Channels", {
+                    templateUrl: "Views/Channels.html",
+                    controller: 
+                })
         }
     ]);

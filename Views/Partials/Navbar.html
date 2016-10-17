@@ -15,9 +15,33 @@
                 <li ng-class="{active: $route.current.activeTab == 'Home'}">
                     <a href="/">Home</a>
                 </li>
-                <!--<li ng-class="{active: $route.current.activeTab == 'Home'}">
-                    <a href="/">Home</a>
-                </li>-->
+                <li ng-class="{active: $route.current.activeTab == 'Channels'}" class="dropdown" id="menu1" data-toggle="dropdown">
+                    <a href="/Channels" class="dropdown-toggle" data-toggle="dropdown">
+                        Channels<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">
+                                Channel 1
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">
+                                Channel 2
+                            </a>
+                        </li>
+                        <li class="disabled">
+                            <a href="#">Channel 3</a>
+                        </li>
+                        <li role="presentation" class="divider">
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">
+                                Add new channel
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

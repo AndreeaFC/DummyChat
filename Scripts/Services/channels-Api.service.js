@@ -34,10 +34,10 @@ angular.module("mainModule")
                 return deferred.promise;
             };
 
-            this.updateChannel = function (updateMessage) {
+            this.updateChannel = function (updateChannel) {
                 var deferred = $q.defer();
 
-                $http.put(message + "/" + updateMessage.id, updateMessage)
+                $http.put(channel + "/" + updateChannel.id, updateChannel)
                     .then(function (response) {
                         deferred.resolve(response.data);
                     }, function (response) {
@@ -47,10 +47,10 @@ angular.module("mainModule")
                 return deferred.promise;
             };
 
-            this.deleteMessage = function (id) {
+            this.deleteChannel = function (id) {
                 var deferred = $q.defer();
 
-                $http.delete(message + "/" + id)
+                $http.delete(channel + "/" + id)
                     .then(function (response) {
                         deferred.resolve();
                     }, function (response) {
