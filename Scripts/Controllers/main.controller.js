@@ -10,9 +10,14 @@ angular.module("mainModule")
         "messagesApi",
         function ($scope, $location, $route, $http, channelsApi, messagesApi) {
             $scope.$route = $route;
+            //$scope.nextAvailableId = 0;
             $scope.models = {
                 channels: [],
                 messages: []
+            }
+            
+            $scope.go = function (url) {
+                $location.path(url);
             }
 
             channelsApi.getChannels()
@@ -20,14 +25,46 @@ angular.module("mainModule")
                     $scope.models.channels = channels;
                 })
 
-            messagesApi.getMessages()
-                .then(function (messages) {
-                    $scope.models.messages = messages;
-                })
+            
+            //$scope.loadModels = function () {
+            //    var dataString = localStorage.getItem("models");
 
-            $scope.go = function (url) {
-                $location.path(url);
-            }
+            //    if (dataString) {
+            //        $scope.models = JSON.parse(dataString);
+            //    }
+            //    //else {
+            //    //    $scope.models.channels = [];
+            //    //    $scope.nextAvailableId = 0;
+            //    //}
+            //}
+
+            //$scope.loadNextAvailableId = function () {
+            //    var dataString = localStorage.getItem("nextAvailableId");
+
+            //    if (dataString) {
+            //        $scope.nextAvailableId = JSON.parse(dataString);
+            //    }
+            //}
+
+            //$scope.retrieveNextAvailableId = function () {
+            //    var id = $scope.nextAvailableId++;
+            //    $scope.saveNextAvailableId();
+            //    return id;
+            //}
+
+            //$scope.saveNextAvailableId = function () {
+            //    var jsonString = JSON.stringify($scope.nextAvailableId);
+            //    localStorage.setItem("nextAvailableId", jsonString);
+            //}
+
+            //$scope.saveChannels = function () {
+            //    var jsonString = JSON.stringify($scope.models.channels);
+            //    localStorage.setItem("channels", jsonString);
+            //}
+
+            //$scope.loadNextAvailableId();
+            //$scope.loadModels();
+
 
             //$http.get("http://dummyapi.kodalagom.se/api/channels")
             //    .then(function (response) {

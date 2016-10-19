@@ -4,10 +4,10 @@
     /*background-image: url('../../Gallery/maiden_background.jpg');*/
 }
 
-html {
-    /*background-image: url('../../Gallery/maiden_background.jpg');*/
-    /*background-image: url('../../Gallery/wl38fOM-iron-maiden-wallpaper.jpg');*/
-    background-image: url('../../Gallery/9300851672_4e4cc744b3_o.jpg');
+body {
+    /*background-image: url('../../Gallery/9300851672_4e4cc744b3_o.jpg');*/
     background-repeat: no-repeat;
     background-size: cover;
+    /*color: antiquewhite;*/
 }
+

@@ -1,0 +1,38 @@
+﻿<br />
+<br />
+<div class="col-md-4">
+    <form ng-submit="addMessage()">
+        <fieldset>
+            <legend>Add message</legend>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text"
+                       id="author"
+                       class="form-control"
+                       placeholder="Author..."
+                       ng-model="newMessage.author" />
+            </div>
+            <div class="form-group">
+                <label for="body">Body</label>
+                <textarea id="body"
+                          class="form-control"
+                          style="width: 100%; height: 200px;"
+                          placeholder="Body..."
+                          ng-model="newMessage.body"></textarea>
+            </div>
+            <!--<success-button ng-model="clicked"></success-button>-->
+            <button type="submit"
+                    class="btn btn-success">
+                <span class="glyphicon glyphicon-plus"></span> Create message
+            </button>
+        </fieldset>
+    </form>
+</div>
+<div class="col-md-12">
+    <h1 ng-bind="models.channels[currentChannelIndex].name"></h1>
+    <div ng-repeat="message in models.channels[currentChannelIndex].messages track by $index">
+        <h3 ng-bind="message.author"></h3>
+        <h3 ng-bind="message.timeSent"></h3>
+        <p ng-bind="message.body"></p>
+    </div>
+</div>

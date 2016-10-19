@@ -24,20 +24,7 @@ angular.module("mainModule")
             this.addMessage = function (newMessage) {
                 var deferred = $q.defer();
 
-                $http.message(messages, newMessage)
-                    .then(function (response) {
-                        deferred.resolve(response.data);
-                    }, function (response) {
-                        deferred.resolve([]);
-                    });
-
-                return deferred.promise;
-            };
-
-            this.updateMessage = function (updateMessage) {
-                var deferred = $q.defer();
-
-                $http.put(message + "/" + updateMessage.id, updateMessage)
+                $http.post(messages, newMessage)
                     .then(function (response) {
                         deferred.resolve(response.data);
                     }, function (response) {
@@ -59,7 +46,5 @@ angular.module("mainModule")
 
                 return deferred.promise;
             };
-
-
         }
     ])

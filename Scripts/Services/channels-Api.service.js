@@ -21,10 +21,10 @@ angular.module("mainModule")
                 return deferred.promise;
             };
 
-            this.addChannel = function (newChannel) {
+            this.getChannel = function (id) {
                 var deferred = $q.defer();
 
-                $http.channel(channels, newChannel)
+                $http.get(channels + "/" + id)
                     .then(function (response) {
                         deferred.resolve(response.data);
                     }, function (response) {
@@ -34,10 +34,10 @@ angular.module("mainModule")
                 return deferred.promise;
             };
 
-            this.updateChannel = function (updateChannel) {
+            this.addChannel = function (newChannel) {
                 var deferred = $q.defer();
 
-                $http.put(channel + "/" + updateChannel.id, updateChannel)
+                $http.channel(channels, newChannel)
                     .then(function (response) {
                         deferred.resolve(response.data);
                     }, function (response) {
