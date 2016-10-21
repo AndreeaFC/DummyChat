@@ -37,7 +37,7 @@ angular.module("mainModule")
             this.addChannel = function (newChannel) {
                 var deferred = $q.defer();
 
-                $http.channel(channels, newChannel)
+                $http.post(channels, newChannel)
                     .then(function (response) {
                         deferred.resolve(response.data);
                     }, function (response) {
@@ -50,7 +50,7 @@ angular.module("mainModule")
             this.deleteChannel = function (id) {
                 var deferred = $q.defer();
 
-                $http.delete(channel + "/" + id)
+                $http.delete(channels + "/" + id)
                     .then(function (response) {
                         deferred.resolve();
                     }, function (response) {

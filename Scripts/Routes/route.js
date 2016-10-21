@@ -16,27 +16,22 @@ angular.module("mainModule")
                     activeTab: "Home"
                 })
                 .when("/Channel/:id", {
-                    templateUrl: "Views/Channels/Channel.html",
+                    templateUrl: "Views/Channel.html",
                     controller: "ChannelController",
-                    caseInsensitiveMatch: true
+                    caseInsensitiveMatch: true,
+                    activeTab: "Home"
                 })
-                //.when("/Message/:id", {
-                //    templateUrl: "Views/Message.html",
-                //    controller: "ChannelController",
-                //    caseInsensitiveMatch: true,
-                //    activeTab: "Channel"
-                //})
                 .when("/Admin", {
                     templateUrl: "Views/Admin.html",
                     controller: "AdminController",
                     caseInsensitiveMatch: true,
                     activeTab: "Admin"
                 })
-                .when("/Subscriptions", {
-                    templateUrl: "Views/Subscriptions.html",
-                    controller: "SubscriptionsController",
+                .when("/Favorites", {
+                    templateUrl: "Views/Favorites.html",
+                    controller: "FavoritesController",
                     caseInsensitiveMatch: true,
-                    activeTab: "Subscriptions"
+                    activeTab: "Favorites"
                 })
         }
     ]);

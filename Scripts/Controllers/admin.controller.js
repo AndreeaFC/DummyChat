@@ -7,9 +7,18 @@ angular.module("mainModule")
         "messagesApi",
         function ($scope, channelsApi, messagesApi) {
             $scope.title = "Admin";
+            $scope.newChannel = {};
+
+            $scope.addChannel = function () {
+                channelsApi.addChannel($scope.newChannel)
+                    .then(function (data) {
+                        console.log(data);
+                        $scope.models.channels.push(data);
+                    });
+            };
 
             $scope.deleteChannel = function (channel) {
-                postsApi.deleteChannel(channel.id)
+                channelsApi.deleteChannel(channel.id)
                     .then(function () {
                         var index = $scope.models.channels.map(function (channel) {
                             return channel.id;
@@ -20,7 +29,7 @@ angular.module("mainModule")
             }
 
             $scope.deleteMessage = function (message) {
-                postsApi.deleteMessage(message.id)
+                messagesApi.deleteMessage(message.id)
                     .then(function () {
                         var index = $scope.models.messages.map(function (message) {
                             return message.id;

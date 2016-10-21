@@ -1,8 +1,27 @@
 ﻿<br />
 <br />
-<div class="col-md-12">
+<!--<div class="col-md-12">
     <h3 ng-bind="title"></h3>
-    <p>Welcome to Dummy Chat. Select the channel you want to go in!</p>
+</div>-->
+<div class="col-md-4">
+    <form ng-submit="addChannel()">
+        <fieldset>
+            <legend>Add channel</legend>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text"
+                       id="name"
+                       class="form-control"
+                       placeholder="Name..."
+                       ng-model="newChannel.name" />
+            </div>
+            <!--<success-button ng-model="clicked"></success-button>-->
+            <button type="submit"
+                    class="btn btn-success">
+                <span class="glyphicon glyphicon-plus"></span> Create channel
+            </button>
+        </fieldset>
+    </form>
 </div>
 <div class="col-md-12">
     <div ng-repeat="channel in models.channels track by $index">
@@ -12,14 +31,9 @@
                 ng-click="deleteChannel(channel)">
             <span class="glyphicon glyphicon-remove"></span> Delete channel
         </button>
-        <!--<subscribe-button ng-model="message.subscribed"
-                          ng-click="subscribe(message.author)"></subscribe-button>
-        <channel-vote channel="channel"></channel-vote>-->
+        <favorite-button ng-model="channel.subscribed"
+                          ng-click="subscribe(channel.id)">
+        </favorite-button>
+        <!--<channel-vote channel="channel"></channel-vote>-->
     </div>
-    <!--<div ng-repeat="message in models.messages track by $index">
-        <h3 ng-bind="message.title"></h3>
-        <h3 ng-bind="message.author"></h3>
-        <p ng-bind="message.body"></p>
-        <p ng-bind="message.postDate"></p>
-    </div>-->
 </div>

@@ -6,8 +6,10 @@
 
 body {
     /*background-image: url('../../Gallery/9300851672_4e4cc744b3_o.jpg');*/
+    /*background: url('../../Gallery/9300851672_4e4cc744b3_o.jpg') no-repeat 50%;*/
+    /*background: url('../../Gallery/9300851672_4e4cc744b3_o.jpg') 30%;*/
     background-repeat: no-repeat;
     background-size: cover;
-    /*color: antiquewhite;*/
+    color: crimson;
 }
 

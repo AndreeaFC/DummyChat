@@ -8,6 +8,7 @@ angular.module("mainModule")
         "$routeParams",
         function ($scope, channelsApi, messagesApi, $routeParams) {
             $scope.newMessage = { channelId: +$routeParams.id };
+
             $scope.currentChannelIndex = $scope.models.channels.map(function (channel) {
                 return channel.id;
             }).indexOf(+$routeParams.id);
@@ -27,10 +28,22 @@ angular.module("mainModule")
                         $scope.models.channels[$scope.currentChannelIndex] = data[0];
                     });
             };
-            
+
             //messagesApi.getMessages()
             //    .then(function (messages) {
             //        $scope.models.messages = messages;
             //    })
+
+            //TODO: timer
+            //$scope.startTimer = function () {
+            //    $scope.$broadcast('timer-start');
+            //    $scope.timerRunning = true;
+            //};
+
+            //$scope.$on('timer-tick', function (event, args) {
+            //    $scope.timerConsole += $scope.timerType + ' - event.name = ' + event.name + ', timeoutId = ' + args.timeoutId + ', millis = ' + args.millis + '\n';
+            //});
+
+            //$scope.startTimer();
         }
     ]);

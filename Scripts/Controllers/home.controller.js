@@ -8,13 +8,23 @@ angular.module("mainModule")
         function ($scope, channelsApi, messagesApi) {
             $scope.title = "Home";
 
-            $scope.addChannel = function () {
-                channelsApi.addChannel($scope.newChannel)
-                    .then(function (data) {
-                        console.log(data);
-                        $scope.models.channels.push(data);
-                    });
-            };
+            $scope.subscribe = function (id) {
+                if ($scope.models.channels.indexOf(id) == -1) {
+                    $scope.models.channels.push(id);
+                }
+
+                $scope.save();
+                $scope.getFeed();
+            }
+
+
+            //$scope.addChannel = function () {
+            //    channelsApi.addChannel($scope.newChannel)
+            //        .then(function (data) {
+            //            console.log(data);
+            //            $scope.models.channels.push(data);
+            //        });
+            //};
 
 
             //$scope.deleteChannel = function (channel) {
