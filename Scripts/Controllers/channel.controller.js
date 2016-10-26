@@ -34,6 +34,7 @@ angular.module("mainModule")
             //        $scope.models.messages = messages;
             //    })
 
+
             //TODO: timer
             //$scope.startTimer = function () {
             //    $scope.$broadcast('timer-start');

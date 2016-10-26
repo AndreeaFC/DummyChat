@@ -13,7 +13,8 @@ angular.module("mainModule")
             //$scope.nextAvailableId = 0;
             $scope.models = {
                 channels: [],
-                messages: []
+                messages: [],
+                favorites: []
             }
             
             $scope.go = function (url) {
@@ -25,18 +26,44 @@ angular.module("mainModule")
                     $scope.models.channels = channels;
                 })
 
-            
-            //$scope.loadModels = function () {
-            //    var dataString = localStorage.getItem("models");
+            //load  and save favorites in local storage
+            $scope.save = function () {
+                localStorage.setItem("favorites", JSON.stringify($scope.models.favorites));
+            }
 
-            //    if (dataString) {
-            //        $scope.models = JSON.parse(dataString);
-            //    }
-            //    //else {
-            //    //    $scope.models.channels = [];
-            //    //    $scope.nextAvailableId = 0;
-            //    //}
-            //}
+            $scope.load = function () {
+                var favorites = localStorage.getItem("favorites");
+                if (favorites)
+                    $scope.models.favorites = JSON.parse(favorites);
+                console.log($scope.models.favorites);
+            }
+            
+            $scope.getFavs = function () {
+                angular.forEach($scope.models.channels, function (channel) {
+                    if ($scope.models.favorites.indexOf(channel.id) != -1)
+                        channel.subscribed = true;
+                    else
+                        channel.subscribed = false;
+                });
+                console.log($scope.models.favorites);
+            }
+
+            $scope.subscribe = function (id) {
+                console.log($scope.models.favorites);
+                if ($scope.models.favorites.indexOf(id) == -1) {
+                    $scope.models.favorites.push(id);
+                    console.log($scope.models.favorites);
+                }
+                $scope.save();
+                $scope.getFavs();
+            }
+
+            $scope.$watch("models.channels", function (newValue) { 
+                $scope.load();
+                console.log($scope.models.favorites);
+                $scope.getFavs();
+            })
+
 
             //$scope.loadNextAvailableId = function () {
             //    var dataString = localStorage.getItem("nextAvailableId");
@@ -57,20 +84,6 @@ angular.module("mainModule")
             //    localStorage.setItem("nextAvailableId", jsonString);
             //}
 
-            //$scope.saveChannels = function () {
-            //    var jsonString = JSON.stringify($scope.models.channels);
-            //    localStorage.setItem("channels", jsonString);
-            //}
-
             //$scope.loadNextAvailableId();
-            //$scope.loadModels();
-
-
-            //$http.get("http://dummyapi.kodalagom.se/api/channels")
-            //    .then(function (response) {
-            //        $scope.model.channels = response.data;
-            //    }, function (respone) {
-
-            //    });
         }
     ]);

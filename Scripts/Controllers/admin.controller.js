@@ -28,15 +28,15 @@ angular.module("mainModule")
                     });
             }
 
-            $scope.deleteMessage = function (message) {
-                messagesApi.deleteMessage(message.id)
-                    .then(function () {
-                        var index = $scope.models.messages.map(function (message) {
-                            return message.id;
-                        }).indexOf(message.id);
+            //$scope.deleteMessage = function (message) {
+            //    messagesApi.deleteMessage(message.id)
+            //        .then(function () {
+            //            var index = $scope.models.messages.map(function (message) {
+            //                return message.id;
+            //            }).indexOf(message.id);
 
-                        $scope.models.messages.splice(index, 1);
-                    });
-            }
+            //            $scope.models.messages.splice(index, 1);
+            //        });
+            //}
         }
     ]);

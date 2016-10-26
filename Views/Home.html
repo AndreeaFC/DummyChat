@@ -4,12 +4,12 @@
     <h3 ng-bind="title"></h3>
     <p>Welcome to Dummy Chat. Select the channel you want to go in!</p>
 </div>
-<div class="col-md-12">
+<div class="col-md-12" >
     <div ng-repeat="channel in models.channels track by $index">
-        <h3 ng-bind="channel.name" ng-click="go('/Channel/' + channel.id)"></h3>
-        <!--<subscribe-button ng-model="message.subscribed"
-                          ng-click="subscribe(message.author)"></subscribe-button>
-        <channel-vote channel="channel"></channel-vote>-->
+        <h3 ng-bind="channel.name" ng-click="go('/Channel/' + channel.id)" class="pointer"></h3>
+        <!--<channel-vote channel="channel"></channel-vote>-->
+        <favorite-button ng-model="channel.subscribed"
+                      ng-click="subscribe(channel.id)">
+        </favorite-button>
     </div>
-   
 </div>
