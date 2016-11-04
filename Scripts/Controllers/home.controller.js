@@ -3,20 +3,7 @@
 angular.module("mainModule")
     .controller("HomeController", [
         "$scope",
-        "channelsApi",
-        "messagesApi",
-        function ($scope, channelsApi, messagesApi) {
+        function ($scope) {
             $scope.title = "Dummy Chat";
-            
-            //$scope.deleteMessage = function (message) {
-            //    postsApi.deleteMessage(message.id)
-            //        .then(function () {
-            //            var index = $scope.models.messages.map(function (message) {
-            //                return message.id;
-            //            }).indexOf(message.id);
-
-            //            $scope.models.messages.splice(index, 1);
-            //        });
-            //}
         }
     ]);

@@ -1,11 +1,11 @@
 ﻿<button type="button"
         class="btn"
-        ng-class="{ 'btn-warning': !subscribed,
-                    'disabled': subscribed,
-                    'btn-default': subscribed }">
+        ng-class="{ 
+                'btn-warning': !subscribed,
+               'btn-info': subscribed }">
     <span class="glyphicon"
           ng-class="{ 'glyphicon-plus': !subscribed,
-                      'glyphicon-ok': subscribed }"></span>
-    <span ng-show="!subscribed"> Add to favorites</span>
-    <span ng-show="subscribed"> Added to favorites </span>
+                      'glyphicon-minus': subscribed }"></span>
+    <span ng-show="!subscribed"> Subscribe </span>
+    <span ng-show="subscribed"> Unsubscribe </span>
 </button>

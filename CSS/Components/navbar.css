@@ -1,9 +1,10 @@
 ﻿.navbar {
     border-radius: 0;
 }
-/*#logo {
-    width: auto; 
-    height: 70px; 
-    margin-top: -.85em; 
-    border-radius: 20px;
-}*/
+.navbar-inverse .navbar-collapse {
+    border: none;
+}
+#logo {
+    max-width:100px; 
+    margin-top: -15px;
+}

@@ -1,21 +1,24 @@
-﻿<br />
-<br />
-<div class="col-md-12">
+﻿<div class="col-md-12">
     <div class="col-md-4 col-md-offset-4">
-        <h2 ng-bind="title" class="text-center fa fa-coffee fa-2x"></h2>
+        <h2 ng-bind="title" class="text-center"></h2>
         <fieldset>
             <legend></legend>
         </fieldset>
         <p>Welcome back! Select the channel you want to go in:</p>
     </div>
 </div>
+<div class="col-md-3 col-md-offset-1">
+    <img src="../Gallery/16167-illustration-of-a-cup-of-coffee-pv.png" style="width: 70px; height: auto;" />
+    <button class="btn btn-danger" ng-mousemove="count = count + 1" ng-init="count=0">
+        Yes please.
+    </button>
+    {{count}} ml
+</div>
 <div class="col-md-12">
     <div class="col-md-4 col-md-offset-4" id="glow" ng-repeat="channel in models.channels track by $index">
         <h3 ng-bind="channel.name" ng-click="go('/Channel/' + channel.id)" class="pointer"></h3>
         <favorite-button class="text-right" ng-model="channel.subscribed"
-                         ng-click="subscribe(channel.id)">
+                         ng-click="toggleSubscription(channel.id)">
         </favorite-button>
     </div>
 </div>
-
-<!--<channel-vote channel="channel"></channel-vote>-->

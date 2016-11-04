@@ -1,13 +1,12 @@
-﻿<nav class="navbar navbar-fixed-top navbar-inverse no-whitespace">
+﻿<nav class="navbar navbar-inverse no-whitespace" role="navigation">
     <div class="container-fluid">
-        <div class="container-header">
+        <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">
-                <!--<img src="../../Gallery/logo.jpg" id="logo" />-->
+            <a class="navbar-brand" href="/" id="logo">
                 <i class="fa fa-rebel fa-3x"></i>
             </a>
         </div>
@@ -22,35 +21,12 @@
                 <li ng-class="{active: $route.current.activeTab == 'Admin'}">
                     <a href="/Admin">Admin</a>
                 </li>
-
-                <!-- dropdown menu for channels -->
-                <!--<li ng-class="{active: $route.current.activeTab == 'Channels'}" class="dropdown" id="menu1" data-toggle="dropdown">
-                    <a href="/Channels" class="dropdown-toggle" data-toggle="dropdown">
-                        Channels<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                        <li role="presentation">
-                            <a role="menuitem" tabindex="-1" href="#">
-                                Channel 1
-                            </a>
-                        </li>
-                        <li role="presentation">
-                            <a role="menuitem" tabindex="-1" href="#">
-                                Channel 2
-                            </a>
-                        </li>
-                        <li class="disabled">
-                            <a href="#">Channel 3</a>
-                        </li>
-                        <li role="presentation" class="divider">
-                        </li>
-                        <li role="presentation">
-                            <a role="menuitem" tabindex="-1" href="#">
-                                Add new channel
-                            </a>
-                        </li>
-                    </ul>
-                </li>-->
+            </ul>
+            <ul>
+                <li class="navbar-text navbar-right">
+                    Signed in as
+                    <a href="#" class="navbar-link">Admin</a>
+                </li>
             </ul>
         </div>
     </div>

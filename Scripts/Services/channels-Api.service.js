@@ -12,11 +12,11 @@ angular.module("mainModule")
                 var deferred = $q.defer();
 
                 $http.get(channels)
-                  .then(function (response) {
-                      deferred.resolve(response.data);
-                  }, function (response) {
-                      deferred.resolve([]);
-                  });
+                    .then(function (response) {
+                        deferred.resolve(response.data);
+                    }, function (response) {
+                        deferred.resolve([]);
+                    });
 
                 return deferred.promise;
             };

@@ -39,11 +39,14 @@ angular.module("mainModule")
                 console.log($scope.models.favorites);
             }
 
-            $scope.subscribe = function (id) {
+            $scope.toggleSubscription = function (id) {
                 console.log($scope.models.favorites);
-                if ($scope.models.favorites.indexOf(id) == -1) {
+                var index = $scope.models.favorites.indexOf(id);
+                if (index == -1) {
                     $scope.models.favorites.push(id);
                     console.log($scope.models.favorites);
+                } else {
+                    $scope.models.favorites.splice(index, 1);
                 }
                 $scope.saveFavorites();
                 $scope.getFavorites();

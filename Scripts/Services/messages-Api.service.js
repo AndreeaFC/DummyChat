@@ -12,11 +12,11 @@ angular.module("mainModule")
                 var deferred = $q.defer();
 
                 $http.get(messages)
-                  .then(function (response) {
-                      deferred.resolve(response.data);
-                  }, function (response) {
-                      deferred.resolve([]);
-                  });
+                    .then(function (response) {
+                        deferred.resolve(response.data);
+                    }, function (response) {
+                        deferred.resolve([]);
+                    });
 
                 return deferred.promise;
             };
@@ -29,19 +29,6 @@ angular.module("mainModule")
                         deferred.resolve(response.data);
                     }, function (response) {
                         deferred.resolve([]);
-                    });
-
-                return deferred.promise;
-            };
-
-            this.deleteMessage = function (id) {
-                var deferred = $q.defer();
-
-                $http.delete(message + "/" + id)
-                    .then(function (response) {
-                        deferred.resolve();
-                    }, function (response) {
-                        deferred.resolve();
                     });
 
                 return deferred.promise;
