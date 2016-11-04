@@ -1,0 +1,11 @@
+﻿.odd {  
+    color: #F4FF8A;
+    text-align: left;
+}
+.even {
+    color: #A9FFFF;
+    text-align: right;
+}
+#addMessage {
+    position: fixed;
+}

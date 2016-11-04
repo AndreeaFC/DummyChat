@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta charset="utf-8" />
     <link href="CSS/master.css" rel="stylesheet" />
+    <!--<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">-->
+    <link href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body ng-controller="MainController">
     <header ng-include="'Views/Partials/Navbar.html'"></header>
@@ -16,6 +18,7 @@
     <!--<script src="../app/js/timer.js"></script>-->
     <script src="Scripts/jquery-3.1.1.js"></script>
     <script src="Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
@@ -36,11 +39,10 @@
     <script src="Scripts/Services/messages-Api.service.js"></script>
 
     <!-- Filters -->
-    <script src="Scripts/Filters/format-date.filter.js"></script>
 
     <!-- Controllers -->
-    <script src="Scripts/Controllers/channel.controller.js"></script>
     <script src="Scripts/Controllers/main.controller.js"></script>
+    <script src="Scripts/Controllers/channel.controller.js"></script>
     <script src="Scripts/Controllers/admin.controller.js"></script>
     <script src="Scripts/Controllers/home.controller.js"></script>
     <script src="Scripts/Controllers/favorites.controller.js"></script>

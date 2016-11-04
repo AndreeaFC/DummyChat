@@ -6,15 +6,15 @@ angular.module("mainModule")
         "channelsApi",
         "messagesApi",
         function ($scope, channelsApi, messagesApi) {
-            $scope.title = "Favorites";
-            $scope.getFavs();
+            $scope.title = "Favorite channels";
+            $scope.getFavorites();
 
             $scope.unsubscribe = function (ids) {
                 var index = $scope.models.favorites.indexOf(ids);
                 $scope.models.favorites.splice(index, 1);
 
-                $scope.getFavs();
-                $scope.save();
+                $scope.getFavorites();
+                $scope.saveFavorites();
             }
 
             //channelsApi.getChannels(id)

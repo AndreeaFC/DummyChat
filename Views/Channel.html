@@ -1,8 +1,5 @@
-﻿<br />
-<br />
-<div class="col-md-4">
-    <!--<h3><timer interval="3000" /></h3>-->
-    <form ng-submit="addMessage()">
+﻿<!--<div class="col-md-4 col-md-offset-2">
+    <form ng-submit="addMessage()" class="affix">
         <fieldset>
             <legend>Add message</legend>
             <div class="form-group">
@@ -21,21 +18,40 @@
                           placeholder="Body..."
                           ng-model="newMessage.body"></textarea>
             </div>
-            <!--<success-button ng-model="clicked"></success-button>-->
             <button type="submit"
                     class="btn btn-success">
                 <span class="glyphicon glyphicon-plus"></span> Create message
             </button>
         </fieldset>
     </form>
-</div>
+</div>-->
+<br />
+<br />
+<br />
+<br />
 <div class="col-md-12">
-    <h1 ng-bind="models.channels[currentChannelIndex].name"></h1>
-    <div ng-repeat="message in models.channels[currentChannelIndex].messages track by $index">
-        <h3 ng-bind="message.author"></h3>
-        <!-- Date filter not used -->
-        <!--<span>{{message.timeSent | formatDate }}</span>--> 
-        <span>{{message.timeSent | date: 'medium'}}</span>
-        <p ng-bind="message.body"></p>
+    <div class="col-md-4 col-md-offset-4">
+        <h1 id="glow" class="text-center" ng-bind="currentChannel.name"></h1>
+        <button type="button"
+                class="btn btn-warning"
+                data-toggle="modal"
+                data-target="#newMessageModal">
+            Add new message
+        </button>
+        <br />
+        <br />
+        <div ng-repeat="message in currentChannel.messages track by $index">
+            <div ng-class-odd="'odd'" ng-class-even="'even'">
+                <i class="fa fa-commenting-o fa-3x" aria-hidden="true"></i>
+                <h3 ng-bind="message.author"></h3>
+                <span>{{message.timeSent | date: 'medium'}}</span>
+                <p ng-bind="message.body"></p>
+            </div>
+        </div>
     </div>
 </div>
+
+<div ng-include="'Views/Partials/NewMessageModal.html'"></div>
+
+<!--<h3><timer interval="3000" /></h3>-->
+<!--<success-button ng-model="clicked"></success-button>-->

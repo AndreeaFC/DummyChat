@@ -1,18 +1,27 @@
 ﻿.no-whitespace {
     padding: 0;
     margin: 0;
-    /*background-image: url('../../Gallery/maiden_background.jpg');*/
 }
-
 body {
-    /*background-image: url('../../Gallery/9300851672_4e4cc744b3_o.jpg');*/
-    /*background: url('../../Gallery/9300851672_4e4cc744b3_o.jpg') no-repeat 50%;*/
-    /*background: url('../../Gallery/9300851672_4e4cc744b3_o.jpg') 30%;*/
-    background-repeat: no-repeat;
+    background-image: url('../../Gallery/grunge-background-1463561188mfD.jpg');
+    background-attachment: fixed;
+    /*background-position: center;*/
     background-size: cover;
-    color: crimson;
+    background-repeat: no-repeat;
+    color: antiquewhite;
+    word-wrap: break-word;
 }
-
-.pointer {
-    cursor: pointer;
+#glow {
+    border-style: outset;
+    border-color: #A3A3A3;
+    margin-bottom: 20px;
+    /*-webkit-border-radius: 15px;
+    -moz-border-radius: 15px;*/
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    /*background-image: url('../../Gallery/grunge-background-146356047033U.jpg');*/
+    border-color: transparent;
+    background-size: cover;
 }

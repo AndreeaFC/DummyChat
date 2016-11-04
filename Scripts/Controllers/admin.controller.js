@@ -15,6 +15,7 @@ angular.module("mainModule")
                         console.log(data);
                         $scope.models.channels.push(data);
                     });
+                $scope.newChannel = {};
             };
 
             $scope.deleteChannel = function (channel) {

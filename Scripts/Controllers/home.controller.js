@@ -6,7 +6,7 @@ angular.module("mainModule")
         "channelsApi",
         "messagesApi",
         function ($scope, channelsApi, messagesApi) {
-            $scope.title = "Home";
+            $scope.title = "Dummy Chat";
             
             //$scope.deleteMessage = function (message) {
             //    postsApi.deleteMessage(message.id)

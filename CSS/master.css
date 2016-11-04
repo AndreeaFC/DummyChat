@@ -4,6 +4,12 @@
 
 /*Components*/
 @import url('Components/navbar.css');
+@import url('Components/home.css');
+@import url('Components/favorites.css');
+@import url('Components/channel.css');
+@import url('Components/admin.css');
+@import url('Components/channelModal.css');
+@import url('Components/messageModal.css');
 
 /*Layout*/
 @import url('Layout/layout.css');

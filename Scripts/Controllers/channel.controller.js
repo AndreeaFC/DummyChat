@@ -6,26 +6,48 @@ angular.module("mainModule")
         "channelsApi",
         "messagesApi",
         "$routeParams",
-        function ($scope, channelsApi, messagesApi, $routeParams) {
+        "signalR",
+        function ($scope, channelsApi, messagesApi, $routeParams, signalR) {
             $scope.newMessage = { channelId: +$routeParams.id };
+            $scope.currentChannel = {};
+            $scope.text = "";
+            console.log($scope.text);
 
-            $scope.currentChannelIndex = $scope.models.channels.map(function (channel) {
-                return channel.id;
-            }).indexOf(+$routeParams.id);
+            $scope.recieveMessage = function () {
+                signalR.sendRequest();
+            }
+
+            updateMessage = function (text) {
+                $scope.text = text;
+            }
+
+            signalR.initialize(updateMessage);
+
+            //$scope.getCurrentChannelIndex = function () {
+            //    return $scope.models.channels.map(function (channel) {
+            //        return channel.id;
+            //    }).indexOf(+$routeParams.id);
+            //}
 
             $scope.addMessage = function () {
                 messagesApi.addMessage($scope.newMessage)
                     .then(function (data) {
                         console.log(data);
-                        $scope.models.channels[$scope.currentChannelIndex].messages.push(data);
+
+                        $scope.currentChannel.messages.push(data);
                     });
+                $scope.newMessage = {};
+                $scope.recieveMessage();
             };
 
             $scope.getChannelById = function () {
                 channelsApi.getChannel($routeParams.id)
                     .then(function (data) {
                         console.log(data);
-                        $scope.models.channels[$scope.currentChannelIndex] = data[0];
+                        //$scope.models.channels[$scope.currentChannelIndex] = data[0];
+                        $scope.currentChannel = data;
+
+                        console.log("Channel controller get channel by id done");
                     });
             };
 
@@ -46,5 +68,12 @@ angular.module("mainModule")
             //});
 
             //$scope.startTimer();
+
+            // init
+            //if ($scope.models.channels == []) {
+            $scope.getChannelById();
+            //} else {
+            //    $scope.currentChannel = $scope.getCurrentChannelIndex();
+            //}
         }
     ]);

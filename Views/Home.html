@@ -1,15 +1,21 @@
 ﻿<br />
 <br />
 <div class="col-md-12">
-    <h3 ng-bind="title"></h3>
-    <p>Welcome to Dummy Chat. Select the channel you want to go in!</p>
+    <div class="col-md-4 col-md-offset-4">
+        <h2 ng-bind="title" class="text-center fa fa-coffee fa-2x"></h2>
+        <fieldset>
+            <legend></legend>
+        </fieldset>
+        <p>Welcome back! Select the channel you want to go in:</p>
+    </div>
 </div>
-<div class="col-md-12" >
-    <div ng-repeat="channel in models.channels track by $index">
+<div class="col-md-12">
+    <div class="col-md-4 col-md-offset-4" id="glow" ng-repeat="channel in models.channels track by $index">
         <h3 ng-bind="channel.name" ng-click="go('/Channel/' + channel.id)" class="pointer"></h3>
-        <!--<channel-vote channel="channel"></channel-vote>-->
-        <favorite-button ng-model="channel.subscribed"
-                      ng-click="subscribe(channel.id)">
+        <favorite-button class="text-right" ng-model="channel.subscribed"
+                         ng-click="subscribe(channel.id)">
         </favorite-button>
     </div>
 </div>
+
+<!--<channel-vote channel="channel"></channel-vote>-->

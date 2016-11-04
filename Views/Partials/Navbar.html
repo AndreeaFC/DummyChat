@@ -1,4 +1,4 @@
-﻿<nav class="navbar navbar-inverse no-whitespace">
+﻿<nav class="navbar navbar-fixed-top navbar-inverse no-whitespace">
     <div class="container-fluid">
         <div class="container-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -6,20 +6,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
-                <img src="../../Gallery/logo.jpg" id="logo" />
+            <a class="navbar-brand" href="/">
+                <!--<img src="../../Gallery/logo.jpg" id="logo" />-->
+                <i class="fa fa-rebel fa-3x"></i>
             </a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li ng-class="{active: $route.current.activeTab == 'Home'}">
-                    <a href="/">Home</a>
-                </li>
-                <li ng-class="{active: $route.current.activeTab == 'Admin'}">
-                    <a href="/Admin"><i class="glyphicon glyphicon-fire"></i> Admin</a>
+                    <a href="/">Channels</a>
                 </li>
                 <li ng-class="{active: $route.current.activeTab == 'Favorites'}">
                     <a href="/Favorites">Favorites</a>
+                </li>
+                <li ng-class="{active: $route.current.activeTab == 'Admin'}">
+                    <a href="/Admin">Admin</a>
                 </li>
 
                 <!-- dropdown menu for channels -->
